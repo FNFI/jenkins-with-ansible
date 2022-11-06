@@ -4,7 +4,7 @@ pipeline {
   }
   
   environment {
-   AWS_EC2_PRIVATE_KEY=credentials('pemfilecontent') 
+   AWS_EC2_PRIVATE_KEY=credentials('aws-pem-file') 
   }
   
   stages {
@@ -12,7 +12,7 @@ pipeline {
     //Get the Code from GitHub Repo
     stage('CheckOutCode'){
       steps{
-        git branch: 'master', credentialsId: 'aeeaa4ad-45b4-4c30-9401-586ac501a9bb', url: 'https://github.com/MithunTechnologiesDevOps/jenkins-with-ansible.git'
+        git credentialsId: '4f94fc02-3822-4f6b-b20c-f8ec47f201b7', url: 'https://github.com/FNFI/jenkins-with-ansible.git'
       }
     }
      
